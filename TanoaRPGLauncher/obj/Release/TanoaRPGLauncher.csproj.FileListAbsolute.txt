@@ -1,9 +1,0 @@
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\bin\Release\TanoaRPGLauncher.exe.config
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\bin\Release\TanoaRPGLauncher.exe
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\bin\Release\TanoaRPGLauncher.pdb
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\obj\Release\TanoaRPGLauncher.Form1.resources
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\obj\Release\TanoaRPGLauncher.Properties.Resources.resources
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\obj\Release\TanoaRPGLauncher.csproj.GenerateResource.Cache
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\obj\Release\TanoaRPGLauncher.exe
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\obj\Release\TanoaRPGLauncher.pdb
-C:\Users\User\Documents\Visual Studio 2015\Projects\TanoaRPGLauncher\TanoaRPGLauncher\obj\Release\TanoaRPGLauncher.csprojResolveAssemblyReference.cache
