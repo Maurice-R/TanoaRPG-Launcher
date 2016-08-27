@@ -41,6 +41,7 @@ namespace TanoaRPGLauncher
             int num2 = 0;
             string str4 = string.Concat(Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents"), "\\Arma 3 - Other Profiles\\");
 
+
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini"))
             {
 
@@ -117,6 +118,12 @@ namespace TanoaRPGLauncher
             }
             else
             {
+
+                string a3exe = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3\arma3.exe";
+
+                if (!string.IsNullOrWhiteSpace(OPTIONENTextBoxPF.Text)) { a3pfad = OPTIONENTextBoxPF.Text; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; }
+                else { if (File.Exists(a3exe)) { OPTIONENTextBoxPF.Text = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; a3pfad = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; } }
+
 
                 LAUNCHERNoPath.Visible = true;
                 LAUNCHERNoPath2.Visible = true;
@@ -417,11 +424,6 @@ namespace TanoaRPGLauncher
 
         private void OPTIONENSpeichernButton_Click(object sender, EventArgs e)
         {
-
-            string a3exe = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3\arma3.exe";
-
-            if (!string.IsNullOrWhiteSpace(OPTIONENTextBoxPF.Text)) { a3pfad = OPTIONENTextBoxPF.Text; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; }
-            else { if (File.Exists(a3exe)) { OPTIONENTextBoxPF.Text = @"C:\Program Files (x86)\Steam\steamapps\commong\Arma 3"; a3pfad = @"C:\Program Files (x86)\Steam\steamapps\commong\Arma 3"; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; } else { MessageBox.Show("Bitte wähle einen Arma 3 Pfad aus!"); return; } }
 
             Microsoft.VisualBasic.Devices.ComputerInfo inf = new Microsoft.VisualBasic.Devices.ComputerInfo();
 
