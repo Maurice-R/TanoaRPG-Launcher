@@ -425,6 +425,12 @@ namespace TanoaRPGLauncher
         private void OPTIONENSpeichernButton_Click(object sender, EventArgs e)
         {
 
+            string a3exe = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3\arma3.exe";
+
+            if (!string.IsNullOrWhiteSpace(OPTIONENTextBoxPF.Text)) { a3pfad = OPTIONENTextBoxPF.Text; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; }
+            else { if (File.Exists(a3exe)) { OPTIONENTextBoxPF.Text = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; a3pfad = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; } else { MessageBox.Show("Bitte Wähle einen Arma 3 Pfad aus!", "Warnung!"); return; } }
+
+
             Microsoft.VisualBasic.Devices.ComputerInfo inf = new Microsoft.VisualBasic.Devices.ComputerInfo();
 
             StreamWriter savefile = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini");
@@ -544,6 +550,7 @@ namespace TanoaRPGLauncher
             this.startProfileName = this.OPTIONENProfilComboBox.SelectedIndex;
 
         }
+
     }
 
 }
