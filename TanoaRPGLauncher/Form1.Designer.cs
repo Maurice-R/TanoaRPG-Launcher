@@ -140,7 +140,7 @@ namespace TanoaRPGLauncher
             // 
             // Gametracker2
             // 
-            this.Gametracker2.Location = new System.Drawing.Point(0, 3);
+            this.Gametracker2.Location = new System.Drawing.Point(0, 4);
             this.Gametracker2.Name = "Gametracker2";
             this.Gametracker2.Size = new System.Drawing.Size(392, 34);
             this.Gametracker2.TabIndex = 21;
