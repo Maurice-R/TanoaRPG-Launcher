@@ -1,4 +1,4 @@
-﻿namespace TanoaRPGLauncher
+namespace TanoaRPGLauncher
 {
     partial class Form1
     {
