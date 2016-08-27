@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Linq;
@@ -41,12 +41,12 @@ namespace TanoaRPGLauncher
             int num2 = 0;
             string str4 = string.Concat(Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents"), "\\Arma 3 - Other Profiles\\");
 
-            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini"))
             {
 
-                par = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini").Skip(1).First();
-                allpar = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini").Skip(1).First();
-                profile = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini").Skip(5).First();
+                par = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(1).First();
+                allpar = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(1).First();
+                profile = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(5).First();
 
                 if (par.Contains("-noSplash"))
                 {
@@ -99,16 +99,16 @@ namespace TanoaRPGLauncher
 
                 OPTIONENSonstigeParameterTextBox.Text = par;
 
-                a3p = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini").Skip(0).First();
+                a3p = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(0).First();
                 OPTIONENTextBoxPF.Text = a3p;
 
-                Double.TryParse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini").Skip(2).First(), out ra);
+                Double.TryParse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(2).First(), out ra);
                 OPTIONENRamBox.SelectedItem = Convert.ToString(ra) + "MB";
 
-                Double.TryParse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini").Skip(3).First(), out gra);
+                Double.TryParse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(3).First(), out gra);
                 OPTIONENGRamBox.SelectedItem = Convert.ToString(gra) + "MB";
 
-                int.TryParse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini").Skip(4).First(), out cor);
+                int.TryParse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(4).First(), out cor);
                 OPTIONENCPUKerneBox.SelectedItem = Convert.ToString(cor);
 
                 LAUNCHERNoPath.Visible = false;
@@ -151,6 +151,7 @@ namespace TanoaRPGLauncher
             {
 
                 LAUNCHERMissionsVersion.Text = "Deine Missionsdatei ist NICHT aktuell";
+                LAUNCHERProgressBar.Visible = false;
 
             }
 
@@ -162,6 +163,7 @@ namespace TanoaRPGLauncher
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            LAUNCHERProgressBar.Visible = false;
 
             this.OPTIONENProfilComboBox.Items.Add("Default");
             string str1 = string.Concat(Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents"), "\\Arma 3\\");
@@ -423,7 +425,7 @@ namespace TanoaRPGLauncher
 
             Microsoft.VisualBasic.Devices.ComputerInfo inf = new Microsoft.VisualBasic.Devices.ComputerInfo();
 
-            StreamWriter savefile = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini");
+            StreamWriter savefile = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini");
             startparameters = OPTIONENSonstigeParameterTextBox.Text;
             alleparameter = startparameters;
             if (NoSplash)
@@ -500,7 +502,7 @@ namespace TanoaRPGLauncher
 
         private void LAUNCHERLAUNCHBUTTOn2_Click(object sender, EventArgs e)
         {
-            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\settings.ini"))
+            if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini"))
             {
                 if (!File.Exists(downloadlocation))
                 {
