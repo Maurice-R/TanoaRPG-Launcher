@@ -2,13 +2,13 @@ using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Linq;
-using Microsoft.VisualBasic.Devices;
 using System.Management;
 using System.Diagnostics;
-using Microsoft.Win32;
 using System.Net;
 using System.Threading;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
+using System.Drawing;
 
 namespace TanoaRPGLauncher
 {
@@ -40,7 +40,11 @@ namespace TanoaRPGLauncher
             int num1 = 1;
             int num2 = 0;
             string str4 = string.Concat(Path.Combine(Environment.ExpandEnvironmentVariables("%userprofile%"), "Documents"), "\\Arma 3 - Other Profiles\\");
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
 
+            pictureBox7.Visible = false;
+            pictureBox8.Visible = false;
 
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini"))
             {
@@ -101,7 +105,8 @@ namespace TanoaRPGLauncher
                 OPTIONENSonstigeParameterTextBox.Text = par;
 
                 a3p = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(0).First();
-                OPTIONENTextBoxPF.Text = a3p;
+                OPTIONENTextBoxPF.Text = File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(0).First();
+                OPTIONENTextBoxPF.Update();
 
                 Double.TryParse(File.ReadLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\..\\Local\\Arma 3\\SettingsLauncher.ini").Skip(2).First(), out ra);
                 OPTIONENRamBox.SelectedItem = Convert.ToString(ra) + "MB";
@@ -114,19 +119,6 @@ namespace TanoaRPGLauncher
 
                 LAUNCHERNoPath.Visible = false;
                 LAUNCHERNoPath2.Visible = false;
-
-            }
-            else
-            {
-
-                string a3exe = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3\arma3.exe";
-
-                if (!string.IsNullOrWhiteSpace(OPTIONENTextBoxPF.Text)) { a3pfad = OPTIONENTextBoxPF.Text; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; }
-                else { if (File.Exists(a3exe)) { OPTIONENTextBoxPF.Text = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; a3pfad = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; } }
-
-
-                LAUNCHERNoPath.Visible = true;
-                LAUNCHERNoPath2.Visible = true;
 
             }
 
@@ -167,9 +159,9 @@ namespace TanoaRPGLauncher
             LAUNCHERChangelog.Visible = true;
             LAUNCHERChangelog.Text = "Changelog";
             this.SetBounds(100, 100, 772, 490);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = true;
+            this.MinimizeBox = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             LAUNCHERProgressBar.Visible = false;
 
             this.OPTIONENProfilComboBox.Items.Add("Default");
@@ -217,10 +209,8 @@ namespace TanoaRPGLauncher
                     }
                 }
             }
-            tabControl1.SelectedTab = tabPage3;
             OPTIONENProfilComboBox.SelectedIndex = startProfileName;
             allpar = allpar + " \"-name=" + OPTIONENProfilComboBox.SelectedItem + "\"";
-            tabControl1.SelectedTab = tabPage1;
 
             Gametracker.Load("http://cache.www.gametracker.com/server_info/89.163.144.28:2302/b_350_20_692108_381007_FFFFFF_000000.png");
             Gametracker2.Load("http://cache.www.gametracker.com/server_info/89.163.144.28:2302/b_350_20_692108_381007_FFFFFF_000000.png");
@@ -242,6 +232,191 @@ namespace TanoaRPGLauncher
             }
             return str;
         }
+
+
+        /*public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void tabPage1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void tabPage3_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }*/
+
+        #region CloseButton
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        private void pictureBox6_MouseEnter(object sender, EventArgs e)
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        #endregion
+
+        #region MoveWindow
+
+
+        public bool isMouseDown = false;
+        public int xLast;
+        public int yLast;
+
+        #region 1
+
+        private void pictureBox10_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void pictureBox10_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                int newY = this.Top + (e.Y - yLast);
+                int newX = this.Left + (e.X - xLast);
+
+                this.Location = new Point(newX, newY);
+            }
+        }
+
+        private void pictureBox10_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            xLast = e.X;
+            yLast = e.Y;
+        }
+
+        #endregion
+
+        #region 2
+
+        private void pictureBox9_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void pictureBox9_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                int newY = this.Top + (e.Y - yLast);
+                int newX = this.Left + (e.X - xLast);
+
+                this.Location = new Point(newX, newY);
+            }
+        }
+
+        private void pictureBox9_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            xLast = e.X;
+            yLast = e.Y;
+        }
+
+        #endregion
+
+        #region 3
+
+        private void Gametracker_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void Gametracker_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                int newY = this.Top + (e.Y - yLast);
+                int newX = this.Left + (e.X - xLast);
+
+                this.Location = new Point(newX, newY);
+            }
+        }
+
+        private void Gametracker_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            xLast = e.X;
+            yLast = e.Y;
+        }
+
+        #endregion
+
+        #region 4
+
+        private void Gametracker2_MouseUp(object sender, MouseEventArgs e)
+        {
+            isMouseDown = false;
+        }
+
+        private void Gametracker2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                int newY = this.Top + (e.Y - yLast);
+                int newX = this.Left + (e.X - xLast);
+
+                this.Location = new Point(newX, newY);
+            }
+        }
+
+        private void Gametracker2_MouseDown(object sender, MouseEventArgs e)
+        {
+            isMouseDown = true;
+            xLast = e.X;
+            yLast = e.Y;
+        }
+
+        #endregion
+
+
+        #endregion
 
         #endregion
 
@@ -424,11 +599,8 @@ namespace TanoaRPGLauncher
 
         private void OPTIONENSpeichernButton_Click(object sender, EventArgs e)
         {
-
-            string a3exe = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3\arma3.exe";
-
             if (!string.IsNullOrWhiteSpace(OPTIONENTextBoxPF.Text)) { a3pfad = OPTIONENTextBoxPF.Text; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; }
-            else { if (File.Exists(a3exe)) { OPTIONENTextBoxPF.Text = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; a3pfad = @"C:\Program Files (x86)\Steam\steamapps\common\Arma 3"; LAUNCHERNoPath.Visible = false; LAUNCHERNoPath2.Visible = false; } else { MessageBox.Show("Bitte Wähle einen Arma 3 Pfad aus!", "Warnung!"); return; } }
+            else { MessageBox.Show("Bitte Wähle einen Arma 3 Pfad aus!", "Warnung!"); return; }
 
 
             Microsoft.VisualBasic.Devices.ComputerInfo inf = new Microsoft.VisualBasic.Devices.ComputerInfo();
@@ -550,7 +722,6 @@ namespace TanoaRPGLauncher
             this.startProfileName = this.OPTIONENProfilComboBox.SelectedIndex;
 
         }
-
     }
 
 }
