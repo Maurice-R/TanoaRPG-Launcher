@@ -1,3 +1,6 @@
+using System;
+using System.Windows.Forms;
+
 namespace TanoaRPGLauncher
 {
     partial class Form1
@@ -28,9 +31,15 @@ namespace TanoaRPGLauncher
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.OPTIONENProfilLabel = new System.Windows.Forms.Label();
             this.OPTIONENProfilComboBox = new System.Windows.Forms.ComboBox();
             this.Gametracker2 = new System.Windows.Forms.PictureBox();
@@ -54,7 +63,12 @@ namespace TanoaRPGLauncher
             this.OPTIONENNoSplash = new System.Windows.Forms.CheckBox();
             this.OPTIONENButtonDurch = new System.Windows.Forms.Button();
             this.OPTIONENLabelPF = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.Gametracker = new System.Windows.Forms.PictureBox();
             this.LAUNCHERNoPath2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -73,9 +87,20 @@ namespace TanoaRPGLauncher
             this.LAUNCHERMissionsVersion = new System.Windows.Forms.Label();
             this.LAUNCHERNoPath = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gametracker2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gametracker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LAUNCHERFORUMBUTTON)).BeginInit();
@@ -89,6 +114,11 @@ namespace TanoaRPGLauncher
             // 
             this.tabPage3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage3.BackgroundImage")));
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage3.Controls.Add(this.pictureBox12);
+            this.tabPage3.Controls.Add(this.pictureBox10);
+            this.tabPage3.Controls.Add(this.pictureBox8);
+            this.tabPage3.Controls.Add(this.pictureBox7);
+            this.tabPage3.Controls.Add(this.pictureBox6);
             this.tabPage3.Controls.Add(this.OPTIONENProfilLabel);
             this.tabPage3.Controls.Add(this.OPTIONENProfilComboBox);
             this.tabPage3.Controls.Add(this.Gametracker2);
@@ -119,6 +149,56 @@ namespace TanoaRPGLauncher
             this.tabPage3.Text = "Optionen";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox12.BackgroundImage")));
+            this.pictureBox12.Location = new System.Drawing.Point(0, 23);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(760, 1);
+            this.pictureBox12.TabIndex = 28;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Location = new System.Drawing.Point(350, 3);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(387, 21);
+            this.pictureBox10.TabIndex = 27;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox10_MouseDown);
+            this.pictureBox10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox10_MouseMove);
+            this.pictureBox10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox10_MouseUp);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
+            this.pictureBox8.Location = new System.Drawing.Point(737, 3);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox8.TabIndex = 26;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox7.BackgroundImage")));
+            this.pictureBox7.Location = new System.Drawing.Point(737, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox7.TabIndex = 25;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.Location = new System.Drawing.Point(737, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox6.TabIndex = 24;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox6.MouseEnter += new System.EventHandler(this.pictureBox6_MouseEnter);
+            this.pictureBox6.MouseLeave += new System.EventHandler(this.pictureBox6_MouseLeave);
+            // 
             // OPTIONENProfilLabel
             // 
             this.OPTIONENProfilLabel.AutoSize = true;
@@ -140,9 +220,9 @@ namespace TanoaRPGLauncher
             // 
             // Gametracker2
             // 
-            this.Gametracker2.Location = new System.Drawing.Point(0, 4);
+            this.Gametracker2.Location = new System.Drawing.Point(0, 3);
             this.Gametracker2.Name = "Gametracker2";
-            this.Gametracker2.Size = new System.Drawing.Size(392, 34);
+            this.Gametracker2.Size = new System.Drawing.Size(351, 21);
             this.Gametracker2.TabIndex = 21;
             this.Gametracker2.TabStop = false;
             // 
@@ -395,10 +475,45 @@ namespace TanoaRPGLauncher
             this.OPTIONENLabelPF.TabIndex = 0;
             this.OPTIONENLabelPF.Text = "Arma 3 Pfad (Ordner):";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.Location = new System.Drawing.Point(737, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox5.TabIndex = 23;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.Location = new System.Drawing.Point(737, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox4.TabIndex = 22;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Location = new System.Drawing.Point(737, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox3.TabIndex = 21;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
+            this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
+            // 
             // tabPage1
             // 
             this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.pictureBox11);
+            this.tabPage1.Controls.Add(this.pictureBox9);
+            this.tabPage1.Controls.Add(this.pictureBox5);
+            this.tabPage1.Controls.Add(this.pictureBox4);
+            this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Controls.Add(this.Gametracker);
             this.tabPage1.Controls.Add(this.LAUNCHERNoPath2);
             this.tabPage1.Controls.Add(this.pictureBox2);
@@ -424,13 +539,36 @@ namespace TanoaRPGLauncher
             this.tabPage1.Text = "Launcher";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox11.BackgroundImage")));
+            this.pictureBox11.Location = new System.Drawing.Point(0, 23);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(760, 1);
+            this.pictureBox11.TabIndex = 25;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Location = new System.Drawing.Point(350, 3);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(387, 21);
+            this.pictureBox9.TabIndex = 24;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox9_MouseDown);
+            this.pictureBox9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox9_MouseMove);
+            this.pictureBox9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox9_MouseUp);
+            // 
             // Gametracker
             // 
-            this.Gametracker.Location = new System.Drawing.Point(0, 4);
+            this.Gametracker.Location = new System.Drawing.Point(0, 3);
             this.Gametracker.Name = "Gametracker";
-            this.Gametracker.Size = new System.Drawing.Size(392, 34);
+            this.Gametracker.Size = new System.Drawing.Size(351, 21);
             this.Gametracker.TabIndex = 20;
             this.Gametracker.TabStop = false;
+            this.Gametracker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Gametracker_MouseDown);
+            this.Gametracker.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Gametracker_MouseMove);
+            this.Gametracker.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Gametracker_MouseUp);
             // 
             // LAUNCHERNoPath2
             // 
@@ -615,14 +753,28 @@ namespace TanoaRPGLauncher
             this.ClientSize = new System.Drawing.Size(756, 452);
             this.Controls.Add(this.tabControl1);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TanoaRPG Launcher";
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gametracker2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Gametracker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LAUNCHERFORUMBUTTON)).EndInit();
@@ -679,6 +831,17 @@ namespace TanoaRPGLauncher
         private System.Windows.Forms.PictureBox Gametracker2;
         private System.Windows.Forms.Label OPTIONENProfilLabel;
         private System.Windows.Forms.ComboBox OPTIONENProfilComboBox;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox11;
+        private PictureBox pictureBox12;
     }
 }
 
