@@ -1,2 +1,2 @@
-# TanoaRPG-Launcher
-Arma 3 Launcher für TanoaRPG
+# TanoaRPG-Launcher (ALT)
+Alter Arma 3 Launcher für TanoaRPG
